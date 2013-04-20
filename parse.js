@@ -30,3 +30,26 @@ var wordList = {"a":{"1":"\u5416\u963f\u554a\u9515\u9312\u814c","2":"\u55c4"},"a
 function getWordList(){
 
 }
+function renderspell(){
+  $.each(spellList,function(i,l){
+    document.writeln("<span class='spell_index spell_index_"+i+"'>"+i+"</span>");
+    $.each(l,function(m,n){
+      document.writeln("<span class='spell spell_"+n+"'>"+n+"</span><span class='word word_list_"+n+"'></span>");
+    
+    });
+  });
+}
+function renderword(){
+  $.each(wordList,function(i,l){
+    $.each(l,function(m,n){
+      $html += "<span class='tone tone_"+m+"'>m</span>";
+      $html +="<ol>";
+      $.each(n,function(j,k){
+        $html +="<li>"+k+"</li>";
+      });
+      $html +="</ol>";
+    });
+    $(".word_list_"+i).html($html);
+
+  });
+}
