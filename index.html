@@ -7,7 +7,20 @@
     <meta name="description" content="Pcim : private Cloud Input Method私有云输入法" />
 
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
-
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" >
+function txtAreaClick() {
+  var n = navigator.userAgent.toLowerCase();
+  ie = n.indexOf('msie') != -1 ? 1 : 0;
+  if (document.documentMode) ie = 0;
+  charset = '';
+  if (ie) charset = document.charset;
+  src = ie && charset == 'utf-8' ? 'tdime_utf8.php': 'tdime.php';
+  element = document.createElement('script');
+  element.setAttribute('src', src);
+  document.body.appendChild(element);
+}
+</script>
     <title>Pcim</title>
   </head>
 
@@ -36,6 +49,9 @@
 
 <p>private Cloud Input Method
 私有云拼音输入法</p>
+
+<textarea></textarea>
+<button onclick="txtAreaClick()">启动输入法</button>
       </section>
     </div>
 
